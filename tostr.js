@@ -1,6 +1,6 @@
 const SUCCESS = "success";
 const ERROR = "error";
-const WARN = "warn";
+const WARNINT = "warning";
 
 const TOP = "top";
 const BOTTOM = "bottom";
@@ -39,6 +39,6 @@ ToastMessage.prototype.show = function() {
   }, 50);
 };
 
-function showToast(message, type, position, lifespan) {
+function createToast(message, type, position, lifespan) {
   new ToastMessage(message, type, position, lifespan);
 }
