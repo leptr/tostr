@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+.toast-message {
+  position: fixed;
+  padding: 15px 20px;
+  border-radius: 9999999px;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 999999;
+  max-width: 40%;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+
+.toast-message.success {
+  background: rgb(0, 200, 0);
+  color: #fff;
+}
+
+.toast-message.error {
+  background: rgb(200, 0, 0);
+  color: #fff;
+}
+
+.toast-message.warn {
+  background: rgb(200, 200, 0);
+  color: #fff;
+}
+
+/* Hidden message */
+.toast-message.top {
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-message.top-left {
+  top: -100%;
+  left: 10px;
+}
+
+.toast-message.top-right {
+  top: -100%;
+  right: 10px;
+}
+
+.toast-message.bottom {
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-message.bottom-left {
+  bottom: -100%;
+  left: 10px;
+}
+
+.toast-message.bottom-right {
+  bottom: -100%;
+  right: 10px;
+}
+
+/* Shown message */
+.toast-message.top.shown {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-message.top-left.shown {
+  top: 10px;
+  left: 10px;
+}
+
+.toast-message.top-right.shown {
+  top: 10px;
+  right: 10px;
+}
+
+.toast-message.bottom.shown {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-message.bottom-left.shown {
+  bottom: 10px;
+  left: 10px;
+}
+
+.toast-message.bottom-right.shown {
+  bottom: 10px;
+  right: 10px;
+}
