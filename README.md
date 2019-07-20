@@ -16,5 +16,4 @@ createToast function takes 4 parameters:
 
 ### Example usage
 
-`createToast("Example toast notification", SUCCESS, BOTTOM_LEFT, 3000);`
-This creates a toast notification in the bottom left corner with the status of success that will be displayed for 3 seconds before disapearing
+`createToast("Example toast notification", SUCCESS, BOTTOM_LEFT, 3000);` - this creates a toast notification in the bottom left corner with the status of success that will be displayed for 3 seconds before disapearing
