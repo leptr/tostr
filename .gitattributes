@@ -1,1 +1,2 @@
-search/tostr.js linguist-generated=false
+* linguist-vendored
+*.js linguist-vendored=false
