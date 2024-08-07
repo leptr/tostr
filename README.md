@@ -1,4 +1,4 @@
-# tostr
+# Tostr
 
 Simple toast notifications for JavaScript
 
@@ -9,11 +9,16 @@ Simple toast notifications for JavaScript
 
 createToast function takes 4 parameters:
 
-- Message: the text you want displayed in the toast message
-- Type: what type of message this is; types available are SUCCESS, ERROR, WARNING
-- Position: where the message should be positioned at; available positions are TOP, BOTTOM, TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT
-- Lifespan: the lifespan of the message given in milliseconds;
+- `message`: the text you want displayed in the toast message
+- `type`: what type of message your toast is displaying; types available are: SUCCESS, ERROR, WARNING
+- `position`: where the message should be positioned at; available positions are TOP, BOTTOM, TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT
+- `ease_in`: time in seconds that the message should take to show up on the screen;
+- `stay`: time in seconds that the message should stay on screen after the ease in animation in complete;
+- `ease_out`: time in seconds that the message should take to get off screen after its stay is over;
+- `anim_type`: the type of ease-in-out animation to use; available types are: SLIDE_IN, FADE_IN, SCALE_IN
 
 ### Example usage
 
-`createToast("Example toast notification", SUCCESS, BOTTOM_LEFT, 3000);` - this creates a toast notification in the bottom left corner with the status of success that will be displayed for 3 seconds before disapearing
+`createToast("Oh no, I'm toast!", WARN, BOTTOM_RIGHT , 0.25, 2.5, 0.25, SLIDE_IN);` - this creates a warning toast notification in the bottom right corner that will take 0.25 seconds to slide in, stay on screen for 2.5 seconds, then take another 0.25 seconds to slide out
+
+Or you can check out the example folder to see all of the possible options at once!
