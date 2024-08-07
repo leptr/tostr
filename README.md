@@ -2,6 +2,8 @@
 
 Simple toast notifications for JavaScript
 
+![tostr_examples](https://github.com/user-attachments/assets/69b52760-0e3e-4475-88d0-0291cfb4174e)
+
 ## Usage
 
 - Include the JavaScript and the CSS file in your project
