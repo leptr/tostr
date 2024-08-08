@@ -9,7 +9,9 @@ Simple toast notifications for JavaScript
 - Include the JavaScript and the CSS file in your project
 - Create a new toast message using the `createToast` function
 
-createToast function takes 4 parameters:
+## Syntax
+
+`createToast(message, tyoe, position , ease_in, stay, ease_out, anim_type)`
 
 - `message`: the text you want displayed in the toast message
 - `type`: what type of message your toast is displaying; types available are: SUCCESS, ERROR, WARNING
