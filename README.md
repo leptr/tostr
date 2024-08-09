@@ -2,7 +2,7 @@
 
 Simple toast notifications for JavaScript
 
-![tostr_examples](https://github.com/user-attachments/assets/69b52760-0e3e-4475-88d0-0291cfb4174e)
+![tostr_examples](https://github.com/user-attachments/assets/928a46be-54d6-4b0e-9f90-22f0baf0bb1c)
 
 ## Usage
 
