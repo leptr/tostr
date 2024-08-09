@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
-.tostr_container {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: auto;
-  height: auto;
-  user-select: none;
-  background-color: transparent;
-  transition: all 0.2s ease-in-out;
-}
-
 .toast-message {
   display: flex;
   justify-content: center;
@@ -57,37 +45,42 @@
 }
 
 /* Containers */
-.tostr_container.top {
+.toast-message {
+  position: fixed;
+  margin: 5px;
+}
+
+.toast-message.top {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   flex-direction: column-reverse;
 }
 
-.tostr_container.top_left {
+.toast-message.top_left {
   top: 0;
   left: 0;
   flex-direction: column-reverse;
 }
 
-.tostr_container.top_right {
+.toast-message.top_right {
   top: 0;
   right: 0;
   flex-direction: column-reverse;
 }
 
-.tostr_container.bottom {
+.toast-message.bottom {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.tostr_container.bottom_left {
+.toast-message.bottom_left {
   bottom: 0;
   left: 0;
 }
 
-.tostr_container.bottom_right {
+.toast-message.bottom_right {
   bottom: 0;
   right: 0;
 }

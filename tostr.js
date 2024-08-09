@@ -14,19 +14,13 @@ const FADE_IN = "fade_in";
 const SCALE_IN = "scale_in";
 
 const TOSTR_MESSAGE_CONTAINER = {
-  top: null,
-  bottom: null,
-  top_left: null,
-  top_right: null,
-  bottom_left: null,
-  bottom_right: null,
+  top: [],
+  bottom: [],
+  top_left: [],
+  top_right: [],
+  bottom_left: [],
+  bottom_right: [],
 };
-
-window.addEventListener("load", () => {
-  for (let key of Object.keys(TOSTR_MESSAGE_CONTAINER)) {
-    TOSTR_MESSAGE_CONTAINER[key] = createTostrContainer(key);
-  }
-});
 
 class ToastMessage {
   constructor(message, type, position, ease_in, stay, ease_out, anim_type) {
@@ -53,13 +47,27 @@ class ToastMessage {
     this.element.classList.add(this.anim_type);
     this.element.style.transition = `all ${this.ease_out}s ease-in-out`;
 
-    TOSTR_MESSAGE_CONTAINER[this.position].appendChild(this.element);
+    let container = TOSTR_MESSAGE_CONTAINER[this.position];
+
+    container.push(this.element);
+    document.body.appendChild(this.element);
+
+    if (container.length > 1) {
+      for (let i = container.length - 1; i >= 0; i--) {
+        let toast = container[i];
+        let offset = 5;
+        for (let j = container.length - 1; j > i; j--) offset += container[j].offsetHeight + 5;
+        if (toast.classList.contains("top") || toast.classList.contains("top_left") || toast.classList.contains("top_right")) toast.style.marginTop = `${offset}px`;
+        else toast.style.marginBottom = `${offset}px`;
+      }
+    }
 
     setTimeout(() => {
       this.element.classList.add("shown");
       setTimeout(() => {
         this.element.classList.remove("shown");
         setTimeout(() => {
+          container.splice(container.indexOf(this.element), 1);
           this.element.remove();
         }, this.ease_out * 1000 + 100);
       }, this.stay);
@@ -69,12 +77,4 @@ class ToastMessage {
 
 function createToast(message, type, position, ease_in, stay, ease_out, anim_type) {
   new ToastMessage(message, type, position, ease_in, stay, ease_out, anim_type);
-}
-
-function createTostrContainer(position) {
-  let container = document.createElement("div");
-  container.classList.add("tostr_container");
-  container.classList.add(position);
-  document.body.appendChild(container);
-  return container;
 }
